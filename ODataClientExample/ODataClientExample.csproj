@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Connected Services\OData Catalog Service\Csdl.xml" />
+    <None Remove="Connected Services\OData Service\Csdl.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Connected Services\OData Catalog Service\Csdl.xml" />
+    <EmbeddedResource Include="Connected Services\OData Service\Csdl.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.OData.Client" Version="7.6.4" />
+    <PackageReference Include="Microsoft.OData.Core" Version="7.6.4" />
+    <PackageReference Include="Microsoft.OData.Edm" Version="7.6.4" />
+    <PackageReference Include="Microsoft.Spatial" Version="7.6.4" />
+    <PackageReference Include="Simple.OData.Client" Version="5.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

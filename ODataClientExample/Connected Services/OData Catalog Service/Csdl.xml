@@ -1,0 +1,73 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="ResourceCatalogApi.Models" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="Container">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TenantId" Type="Edm.String" />
+        <Property Name="Path" Type="Edm.String" />
+        <Property Name="Hash" Type="Edm.String" />
+        <Property Name="ParentPath" Type="Edm.String" />
+        <Property Name="ParentHash" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="ContainerCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ResourceCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DateCreatedUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="DateModifiedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="DateLastAccessedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="TimezoneId" Type="Edm.String" />
+        <Property Name="TimestampUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="LastUpdatedUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="ResourceTotalSize" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ResourceMinSize" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ResourceMaxSize" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ResourceMeanSize" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ResourceOldestDateCreatedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceNewestDateCreatedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceMeanDateCreatedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceOldestDateModifiedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceNewestDateModifiedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceMeanDateModifiedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceOldestDateLastAccessedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceNewestDateLastAccessedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceMeanDateLastAccessedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="ResourceTotalChangedCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ResourceMeanChangedCount" Type="Edm.Double" Nullable="false" />
+      </EntityType>
+      <EntityType Name="Resource">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TenantId" Type="Edm.String" />
+        <Property Name="Path" Type="Edm.String" />
+        <Property Name="PathHash" Type="Edm.String" />
+        <Property Name="Container" Type="Edm.String" />
+        <Property Name="ContainerHash" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Extension" Type="Edm.String" />
+        <Property Name="Size" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DateCreatedUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="AgeInMonths" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AgeInDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DateModifiedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="LastModifiedAgeInMonths" Type="Edm.Int32" />
+        <Property Name="LastModifiedAgeInDays" Type="Edm.Int32" />
+        <Property Name="DateLastAccessedUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="LastAccessedAgeInMonths" Type="Edm.Int32" />
+        <Property Name="LastAccessedAgeInDays" Type="Edm.Int32" />
+        <Property Name="TimezoneId" Type="Edm.String" />
+        <Property Name="TimestampUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="ChangedCount" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="Container">
+        <EntitySet Name="Containers" EntityType="ResourceCatalogApi.Models.Container" />
+        <EntitySet Name="Resources" EntityType="ResourceCatalogApi.Models.Resource" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
